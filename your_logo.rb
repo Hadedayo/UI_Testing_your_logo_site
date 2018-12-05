@@ -26,8 +26,12 @@ class YourLogoFormSelenium
     @chrome_driver.find_element(:name, @create_account).click
   end
 
-  def select_title_field
-    @chrome_driver.find_element(:id, 'id_gender2').click
+  # def select_title_field
+  #   @chrome_driver.find_element(:id, 'id_gender2').click
+  # end
+
+  def input_firstname_field(text)
+    @chrome_driver.find_element(:name, 'customer_firstname').send_keys(text)
   end
 
 end
@@ -37,5 +41,5 @@ test.visit_your_logo_form
 test.sign_into_your_logo_website
 test.input_email_field('hadedayo@spartaglobal.com')
 test.create_account_field
-test.select_title_field
+test.input_firstname_field('Hassanat')
 sleep 5
