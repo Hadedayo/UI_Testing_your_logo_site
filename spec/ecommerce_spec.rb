@@ -7,13 +7,13 @@ describe 'Testing the ecommerce site' do
     @generate = Generator.new
     @firstname = @generate.firstname
     @lastname = @generate.lastname
-    @email = 'testing@yahoo.co.uk'
+    @email = @generate.email
     @password = 'test123'
     @company_name = @generate.get_company_name
     @address = @generate.get_street_address
     @address2 = @generate.get_secondary_address
     @city = @generate.get_city
-    @postcode = @generate.get_zip_code
+    @postcode = '01234'
     @info = 'Lorem ipsum dolor sit amet.'
     @PhoneNumber = @generate.get_user_phone_number
   end
@@ -77,11 +77,11 @@ describe 'Testing the ecommerce site' do
     sleep 3
   end
 
-  # it "should select a month for the birthday field" do
-  #   @ecommerce_service.select_month_birthday
-  #   expect(@ecommerce_service.is_the_month_of_birthday_selected).to be true
-  #   sleep 3
-  # end
+  it "should select a month for the birthday field" do
+    @ecommerce_service.select_month_birthday
+    expect(@ecommerce_service.is_the_month_of_birthday_selected).to be true
+    sleep 3
+  end
 
   it "should select a year for the birthday field" do
     @ecommerce_service.select_year_birthday
