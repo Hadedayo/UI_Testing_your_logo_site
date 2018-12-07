@@ -7,7 +7,7 @@ describe 'Testing the ecommerce site' do
     @generate = Generator.new
     @firstname = @generate.firstname
     @lastname = @generate.lastname
-    @email = 'test@yahoo.co.uk'
+    @email = 'testing@yahoo.co.uk'
     @password = 'test123'
     @company_name = @generate.get_company_name
     @address = @generate.get_street_address
@@ -77,10 +77,11 @@ describe 'Testing the ecommerce site' do
     sleep 3
   end
 
-  it "should select a month for the birthday field" do
-    @ecommerce_service.select_month_birthday
-    expect(@ecommerce_service.is_the_month_of_birthday_selected).to be true
-  end
+  # it "should select a month for the birthday field" do
+  #   @ecommerce_service.select_month_birthday
+  #   expect(@ecommerce_service.is_the_month_of_birthday_selected).to be true
+  #   sleep 3
+  # end
 
   it "should select a year for the birthday field" do
     @ecommerce_service.select_year_birthday
@@ -173,5 +174,6 @@ describe 'Testing the ecommerce site' do
     sleep 3
     expect(@ecommerce_service.current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
   end
+
 
 end
