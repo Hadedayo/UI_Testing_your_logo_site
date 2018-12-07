@@ -88,7 +88,7 @@ class EcommerceSelenium
   end
 
   def is_the_month_of_birthday_selected
-    @chrome_driver.find_element(:id, 'months').text.include?('4')
+    @chrome_driver.find_element(:id, 'months').attribute('value')
   end
 
   def select_year_birthday
@@ -164,7 +164,7 @@ class EcommerceSelenium
   end
 
   def is_state_selected
-    @chrome_driver.find_element(:id, 'id_state').text.include?('20')
+    @chrome_driver.find_element(:id, 'id_state').attribute('value')
   end
 
   def input_postcode(text)
@@ -182,7 +182,7 @@ class EcommerceSelenium
   end
 
   def is_country_selected
-    @chrome_driver.find_element(:id, 'id_country').text.include?('21')
+    @chrome_driver.find_element(:id, 'id_country').attribute('value')
   end
 
   def input_additional_info(text)
