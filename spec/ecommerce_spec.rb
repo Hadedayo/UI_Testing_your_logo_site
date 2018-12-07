@@ -79,7 +79,7 @@ describe 'Testing the ecommerce site' do
 
   it "should select a month for the birthday field" do
     @ecommerce_service.select_month_birthday
-    expect(@ecommerce_service.is_the_month_of_birthday_selected).to be true
+    expect(@ecommerce_service.is_the_month_of_birthday_selected).to eq '4'
     sleep 3
   end
 
@@ -132,7 +132,7 @@ describe 'Testing the ecommerce site' do
 
   it "should select a state" do
     @ecommerce_service.select_state
-    expect(@ecommerce_service.is_state_selected).to be true
+    expect(@ecommerce_service.is_state_selected).to eq '20'
     sleep 3
   end
 
@@ -144,7 +144,7 @@ describe 'Testing the ecommerce site' do
 
   it "should select a country" do
     @ecommerce_service.select_country
-    expect(@ecommerce_service.is_country_selected).to be true
+    expect(@ecommerce_service.is_country_selected).to eq '21'
     sleep 2
   end
 
@@ -172,7 +172,7 @@ describe 'Testing the ecommerce site' do
   it "should register the account succesfully" do
     @ecommerce_service.click_register_button
     sleep 3
-    expect(@ecommerce_service.current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
+    expect(@ecommerce_service.get_current_url).to eq 'http://automationpractice.com/index.php?controller=my-account'
   end
 
 
